@@ -1,0 +1,30 @@
+SOC153-Malware.md
+# SOC153 - Suspicious Powershell Script Executed
+
+**Date**: 2026-04-26  
+**Platform**: Let'sDefend SOC Simulator  
+**Severity**: High  
+**Verdict**: True Positive ✅  
+**Points**: +5
+
+## 1. Alert Summary
+Host `Tony - 172.16.17.206` executed a suspicious powershell script named `payload_1.ps1` from the Downloads directory. This matches T1059.001 - Command and Scripting Interpreter: PowerShell.
+
+## 2. IOCs
+| Type | Value |
+| --- | --- |
+| File Hash | `db8be06ba6d2d3595dd0c86654a48cfc4c0c5408fdd3f4e1eaf342ac7a2479d0` |
+| File Path | `C:\Users\LetsDefend\Downloads\payload_1.ps1` |
+| Host IP | `172.16.17.206` |
+
+## 3. Actions Taken
+1. Terminated malicious powershell process
+2. Quarantined host `Tony` from the network
+3. Deleted `payload_1.ps1` from disk
+4. Blocked file hash in EDR/SIEM
+
+## 4. MITRE ATT&CK
+**T1059.001 - Command and Scripting Interpreter: PowerShell**
+
+## 5. Evidence
+![SOC153 Screenshot](../screenshots/SOC153.png)
