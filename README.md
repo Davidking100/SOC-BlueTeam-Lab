@@ -31,3 +31,7 @@ Complete 7-day SOC Bootcamp and document 15+ alerts with full IR workflow.
 
 ## Connect
 LinkedIn: 
+
+
+## Week 2: SIEM Skills
+- Built Splunk Playbook with 3 triage queries for SOC Analyst role
