@@ -46,4 +46,5 @@ LinkedIn:
 **Action**: Block IP, Force password reset, Alert user
 
 **Evidence**:
-![Brute Force Detection](02-Evidence/splunk-brute-force-detection.png) 
+![Brute Force Detection](02-Evidence/splunk-brute-force-detection.png.png) 
+
