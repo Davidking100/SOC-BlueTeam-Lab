@@ -1,0 +1,17 @@
+// ============================================================
+// CASE 01: BRUTE FORCE ATTACK DETECTION
+// SOC ANALYST: Davidking100
+// DATE: 2026-07-28
+// DESCRIPTION: Detects 4+ failed login attempts from same IP
+// ============================================================
+
+// Query 1: Find all failed login attempts - HTTP 401
+index=main "401"
+| rex field=_raw "(?<src_ip>\d+\.\d+\.\d+\.\d+)"
+| stats count by src_ip
+| where count > 3
+| sort -count
+| rename src_ip as "Attacker IP", count as "Failed Attempts"
+
+// ALERT LOGIC: If count > 3, this is potential brute force
+// RECOMMENDED ACTION: Block IP, Force password reset
