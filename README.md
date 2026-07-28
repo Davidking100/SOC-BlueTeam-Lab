@@ -37,16 +37,34 @@ LinkedIn:
 - Built Splunk Playbook with 3 triage queries for SOC Analyst role
 
 
-### Case 01: Brute Force Attack Detection
 
-**Alert**: 127 failed login attempts from single IP
-**Tool Used**: Splunk Enterprise
-**Query**: See `/03-SIEM-Queries/brute-force-splunk.spl`
-**Findings**: IP `192.168.1.10` had 4 failed logins in 5 seconds
-**Action**: Block IP, Force password reset, Alert user
 
-**Evidence**:
-![Brute Force Detection](02-Evidence/screenshots/splunk-brute-force-detection.png)
+## Case 01: Brute Force Attack Detection
 
-**Analysis**: Threshold of 4 Failed logins exceeded. This indicate automated brute force activity.
+**Scenario**  
+An attacker attempted to brute force user accounts by sending multiple failed login requests from a single IP address.
 
+**Alert Details**
+- **Severity**: High
+- **Source**: Web Server Logs
+- **Indicator**: 127 failed login attempts from `192.168.1.10`
+
+**Detection**
+- **Tool Used**: Splunk Enterprise
+- **SPL Query**: [`brute-force-splunk.spl`](/03-SIEM-Queries/brute-force-splunk.spl)
+
+**Investigation & Findings**
+Ran SPL query to count failed 401s by source IP. Result:  
+`192.168.1.10` had 4 failed login attempts within 5 seconds. This exceeded our threshold of 3 attempts.
+
+**Evidence**
+![Splunk Brute Force Detection](02-Evidence/screenshots/splunk-brute-force-detection.png)
+*Figure 1: Splunk statistics showing 4 failed attempts from attacker IP*
+
+**Containment & Response**
+1. Blocked IP `192.168.1.10` at firewall
+2. Forced password reset for targeted accounts  
+3. Created alert rule for future brute force attempts
+4. Notified SOC Lead
+
+**MITRE ATT&CK**: T1110.001 - Brute Force: Password Guessing
