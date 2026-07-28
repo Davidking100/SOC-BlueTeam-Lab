@@ -1,0 +1,18 @@
+// ============================================================
+// CASE 02: SUSPICIOUS POWERSHELL DETECTION
+// SOC ANALYST: Davidking100
+// DATE: 2026-07-28
+// DESCRIPTION: Detects encoded PowerShell and download cradles
+// MITRE: T1059.001 - Command and Scripting Interpreter: PowerShell
+// ============================================================
+
+// Query 1: Find encoded PowerShell commands - Common malware technique
+index=windows EventCode=4104 OR ProcessName="powershell.exe"
+| rex field=CommandLine "(?i)(?<suspicious>-e(ncodedcommand)?|-w(indowstyle)?\s+hidden|Invoke-WebRequest|IWR|DownloadString|DownloadFile)"
+| where isnotnull(suspicious)
+| stats count by Computer, User, CommandLine, suspicious
+| sort -count
+| table Computer, User, suspicious, CommandLine
+
+// ALERT LOGIC: Any encoded command or download cradle = HIGH
+// RECOMMENDED ACTION: Kill process, Isolate host, Check for persistence
