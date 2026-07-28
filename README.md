@@ -48,4 +48,5 @@ LinkedIn:
 **Evidence**:
 ![Brute Force Detection](02-Evidence/screenshots/splunk-brute-force-detection.png)
 
+**Analysis**: Threshold of 4 Failed logins exceeded. This indicate automated brute force activity.
 
