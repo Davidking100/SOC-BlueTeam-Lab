@@ -69,3 +69,35 @@ Ran SPL query to count failed 401s by source IP. Result:
 4. Notified SOC Lead
 
 **MITRE ATT&CK**: T1110.001 - Brute Force: Password Guessing
+
+
+
+## Case 02: Suspicious PowerShell Detection
+
+**Scenario**  
+An endpoint executed a suspicious PowerShell command with encoded parameters, likely used to download and execute malware without touching disk.
+
+**Alert Details**
+- **Severity**: Critical
+- **Source**: Windows Event Logs 4104 + Sysmon
+- **Indicator**: `powershell.exe -encodedcommand JABzAD...`
+
+**Detection**
+- **Tool Used**: Splunk Enterprise + Sysmon
+- **SPL Query**: [`suspicious-powershell.spl`](/03-SIEM-Queries/suspicious-powershell.spl)
+
+**Investigation & Findings**
+Searched for ProcessName=powershell with encoded flags. Result:  
+`WKSTN-042` User `jdoe` executed encoded PowerShell that called `Invoke-WebRequest` to `http://malicious.com/payload.exe`.
+
+**Evidence**
+![Suspicious PowerShell](02-Evidence/screenshots/powershell-detection.png)
+*Figure 2: Splunk results showing encoded PowerShell with download cradle*
+
+**Containment & Response**
+1. Killed malicious `powershell.exe` process on `WKSTN-042`
+2. Isolated host from network via EDR
+3. Blocked C2 domain `malicious.com` at firewall
+4. Searched for persistence in Task Scheduler and Registry Run keys
+
+**MITRE ATT&CK**: T1059.001 - Command and Scripting Interpreter: PowerShell
