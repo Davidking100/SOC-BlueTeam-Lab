@@ -35,3 +35,15 @@ LinkedIn:
 
 ## Week 2: SIEM Skills
 - Built Splunk Playbook with 3 triage queries for SOC Analyst role
+
+
+### Case 01: Brute Force Attack Detection
+
+**Alert**: 127 failed login attempts from single IP
+**Tool Used**: Splunk Enterprise
+**Query**: See `/03-SIEM-Queries/brute-force-splunk.spl`
+**Findings**: IP `192.168.1.10` had 4 failed logins in 5 seconds
+**Action**: Block IP, Force password reset, Alert user
+
+**Evidence**:
+![Brute Force Detection](02-Evidence/splunk-brute-force-detection.png) 
