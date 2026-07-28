@@ -55,7 +55,8 @@ An attacker attempted to brute force user accounts by sending multiple failed lo
 
 **Investigation & Findings**
 Ran SPL query to count failed 401s by source IP. Result:  
-`192.168.1.10` had 4 failed login attempts within 5 seconds. This exceeded our threshold of 3 attempts.
+
+**Result**: `192.168.1.10` had 4 failed login attempts within 5 seconds. This exceeded our threshold of 3 attempts.
 
 **Evidence**
 ![Splunk Brute Force Detection](02-Evidence/screenshots/splunk-brute-force-detection.png)
