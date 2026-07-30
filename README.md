@@ -91,8 +91,8 @@ Searched for ProcessName=powershell with encoded flags. Result:
 `WKSTN-042` User `jdoe` executed encoded PowerShell that called `Invoke-WebRequest` to `http://malicious.com/payload.exe`.
 
 **Evidence**
-![Suspicious PowerShell](02-Evidence/screenshots/powershell-detection.png)
-*Figure 2: Splunk results showing encoded PowerShell with download cradle*
+*Screenshot: Splunk detection showing 1 event - Computer: WKSTN-042, User: jdoe, Flags: -encodedcommand, CommandLine: powershell.exe -e JABzAD0ATgBl...*
+*Image pending upload*
 
 **Containment & Response**
 1. Killed malicious `powershell.exe` process on `WKSTN-042`
