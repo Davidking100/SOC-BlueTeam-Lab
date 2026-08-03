@@ -101,3 +101,22 @@ Searched for ProcessName=powershell with encoded flags. Result:
 4. Searched for persistence in Task Scheduler and Registry Run keys
 
 **MITRE ATT&CK**: T1059.001 - Command and Scripting Interpreter: PowerShell
+
+
+# SOC Blue Team Lab
+**By Davidking100**
+
+Hands-on SOC analyst portfolio with 5 incident response case studies.
+
+## 📁 Case Studies
+- **[Case 01: Brute Force Attack](./03-SIEM-Queries/Case-01-BruteForce.md)** - SIEM Alert Thresholds
+- **[Case 02: Suspicious DNS Tunneling](./03-SIEM-Queries/Case-02-Suspicious-DNS.md)** - Network Anomalies  
+- **[Case 03: DNS Traffic Baseline](./03-SIEM-Queries/Case-03-DNS-Traffic-Baseline.md)** - Threat Hunting
+- **[Case 04: Phishing Email Triage](./04-Phishing-Analysis/README.md)** - IOC Extraction + MITRE
+- **[Case 05: Malware Alert Investigation](./05-Malware-Alert-Investigation/README.md)** - EDR + Process Analysis
+
+## 🛠️ Tools Used
+Splunk/SIEM, Wireshark, VirusTotal, Microsoft Defender, MITRE ATT&CK
+
+## 🎯 Goal
+Demonstrate practical blue team skills for SOC Analyst Level 1 roles.
