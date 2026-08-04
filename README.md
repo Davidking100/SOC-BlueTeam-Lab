@@ -112,7 +112,7 @@ Hands-on SOC analyst portfolio with 5 incident response case studies.
 - **[Case 01: Brute Force Attack](./03-SIEM-Queries/Case-01-BruteForce.md)** - SIEM Alert Thresholds
 - **[Case 02: Suspicious DNS Tunneling](./03-SIEM-Queries/Case-02-Suspicious-DNS.md)** - Network Anomalies  
 - **[Case 03: DNS Traffic Baseline](./03-SIEM-Queries/Case-03-DNS-Traffic-Baseline.md)** - Threat Hunting
-- **[case 04: Suspicious PowerShell](./03-SIEM-Queries/Case-04-Suspicious-PowerShell.md)** - LOLBAS + EventID 4104 + MITRE
+- **[Case 04: Suspicious PowerShell](./03-SIEM-Queries/Case-04-Suspicious-PowerShell.md)** - LOLBAS + EventID 4104 + MITRE
 - **[Case 05: Phishing Email Triage](./04-Phishing-Analysis/README.md)** - IOC Extraction + MITRE
 - **[Case 06: Malware Alert Investigation](./05-Malware-Alert-Investigation/README.md)** - EDR + Process Analysis
 
