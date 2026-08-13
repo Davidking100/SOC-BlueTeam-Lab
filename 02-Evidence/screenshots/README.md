@@ -18,6 +18,5 @@ This folder contains supporting artifacts and screenshots from investigations ac
 - **Workflow**: Alert → Triage → IOC Pivot → Documentation → Containment
 - **MITRE ATT&CK**: All cases mapped to TTPs
 
-- **Tested KQL in Sentinel Lab.**
-  ## No data ingested during lab period
+- **Tested KQL in Sentinel Lab.** No data ingested during lab period 
   
