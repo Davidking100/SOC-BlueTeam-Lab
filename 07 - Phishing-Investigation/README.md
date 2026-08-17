@@ -1,20 +1,22 @@
-# Lab 07: Phishing Investigation with Microsoft Sentinel
+# Lab 07: Phishing Investigation & Detection Engineering
+**SOC Analyst Portfolio Project**
 
-## Objective
-Investigate and triage a phishing email alert in Microsoft Sentinel. Identify IOCs, determine scope, and document response actions.
+## 1. Objective
+Investigate potential phishing activity and engineer a custom detection rule in Microsoft Sentinel to monitor Microsoft Defender for Office 365 telemetry.
 
-## Tools Used
-Microsoft Sentinel, Microsoft 365 Defender, KQL, MITRE ATT&CK
+## 2. Environment
+- **SIEM**: Microsoft Sentinel
+- **Data Source**: Microsoft Defender for Office 365 Connector
+- **Skill Focus**: Threat Hunting, KQL, Detection Engineering, Troubleshooting
 
-## Investigation Steps
-1. Identify phishing incident
-2. Analyze email IOCs: Sender, Subject, URLs, Attachments  
-3. Hunt for related activity
-4. Contain and remediate
-5. Document findings
+## 3. Investigation Process
 
-## Key Findings
+### 3.1 Initial Data Exploration
+Ran proactive hunt queries against email telemetry to identify phishing indicators.
+```kql
+SecurityAlert
+| where TimeGenerated > ago(7d)
+| where ProductName == "Microsoft Defender for Office 365"
+| where AlertName has "phish"
 
-## Mitigation
 
-## Screenshots
