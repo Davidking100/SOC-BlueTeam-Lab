@@ -122,27 +122,33 @@ Splunk/SIEM, Wireshark, VirusTotal, Microsoft Defender, MITRE ATT&CK
 ## 🎯 Goal
 Demonstrate practical blue team skills for SOC Analyst Level 1 roles.
 
-# SOC L1 Portfolio - David Oluwatosin
+**Aspiring SOC L1 Analyst | Microsoft Defender XDR | Azure Sentinel | KQL | Incident Response**  
+Lagos, Nigeria | Open to Remote 24/7 MSSP Roles
 
-Aspiring SOC L1 Analyst | Microsoft Defender XDR | Azure Sentinel | KQL | Incident Response
+This repository documents my hands-on Security Operations Center labs. Each incident follows the full IR workflow: **Detect > Investigate > Contain > Document** using Microsoft Defender XDR and KQL.
 
-This repository documents my hands-on incident response labs. Each lab follows a full IR workflow: Detect > Investigate > Contain > Document.
+## 📁 Incident Response Labs
 
-## Labs
-
-| Lab # | Title | Attack Type | Tools Used | Status |
+| Lab # | Title | Attack Type | Key Skills | Status |
 | --- | --- | --- | --- | --- |
-| 08 | Data Exfiltration Investigation | Insider Threat / Exfiltration | Defender XDR, KQL | [View Report](./Incidents/LAB08-DataExfiltration.md) |
-| 09 | Phishing Investigation | Initial Access / Phishing | Defender XDR, EmailUrlInfo KQL | [View Report](./Incidents/LAB09-Phishing.md) |
-| 10 | Malware Infection Investigation | Execution / C2 | Defender XDR, Process KQL | [View Report](./Incidents/LAB10-Malware.md) |
+| 08 | [Data Exfiltration Investigation](./Incidents/LAB08-DataExfiltration.md) | Insider Threat | DeviceNetworkEvents, DeviceFileEvents KQL, Containment | ✅ Closed |
+| 09 | [Phishing Investigation](./Incidents/LAB09-Phishing.md) | Initial Access | EmailEvents, EmailUrlInfo KQL, Email Purge | ✅ Closed |
+| 10 | [Malware Infection Investigation](./Incidents/LAB10-Malware.md) | Execution / C2 | DeviceProcessEvents, IOC Hunting, Device Isolation | ✅ Closed |
 
-## Technical Skills
-**SIEM & EDR:** Microsoft Defender XDR, Azure Sentinel, Splunk, Elastic  
-**KQL:** EmailEvents, EmailUrlInfo, DeviceNetworkEvents, DeviceProcessEvents, DeviceFileEvents  
-**IR:** Alert Triage, Incident Classification, Containment, Forensics, Reporting  
-**Framework:** MITRE ATT&CK
+## 🛠️ Technical Skills
 
-## About Me
-Security Operations Analyst based in Lagos, Nigeria. Open to remote 24/7 MSSP SOC roles.
-Connect with me on LinkedIn: https://www.linkedin.com/in/david-oluwatosin-233917158/
+**SIEM & EDR:** Microsoft Defender XDR, Azure Sentinel, Splunk  
+**Threat Hunting:** KQL, MITRE ATT&CK Mapping, IOC Analysis  
+**IR:** Alert Triage, Incident Classification, Containment, Forensics  
+**Cloud Security:** Microsoft 365, Azure AD, Intune, DLP
 
+## 📊 What I Did
+1. **Triaged alerts** and classified True Positives vs False Positives
+2. **Wrote KQL queries** to hunt across Email, Device, and Network logs
+3. **Performed containment** - device isolation, user disable, domain blocks
+4. **Documented everything** in professional incident reports
+
+## 🤝 Connect With Me
+LinkedIn: https://www.linkedin.com/in/david-oluwatosin-233917158/ | Open to SOC L1, SOC Analyst, MSSP roles
+
+*Built to demonstrate real-world SOC skills for MSSP environments*
