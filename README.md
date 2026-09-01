@@ -1,155 +1,33 @@
 
 Big Billion <davidogun100@gmail.com>
-10:42 PM (0 minutes ago)
-to savenet419
-
 # SOC-BlueTeam-Lab 🛡️
-Documenting my journey to becoming a Tier 1 SOC Analyst through hands-on labs, alert triage, and detection engineering.
 
-## About Me
-Aspiring SOC Analyst currently training with Let'sDefend SOC Simulator. 
-Focus: SIEM, Incident Response, Threat Detection, MITRE ATT&CK
-
-## 📁 Repository Structure
-## 🚀 Day 1 Progress - 3 Alerts Closed
-| Alert ID | Type | Verdict | MITRE ATT&CK |
-| --- | --- | --- | --- |
-| SOC282 | Phishing Email | True Positive | T1566.001 |
-| SOC153 | Suspicious Powershell | True Positive | T1059.001 |
-| SOC127 | SQL Injection | True Positive | T1190 |
-
-All case studies and screenshots are in `01-SIEM-Alerts/`
-
-## 🛠️ Tools in My Home Lab
-- Splunk Free - SIEM
-- Wazuh - EDR/SIEM
-- Sysmon - Windows Logging
-- Atomic Red Team - Attack Simulation
-
-## Goals
-Complete 7-day SOC Bootcamp and document 15+ alerts with full IR workflow.
-
-## Connect
-LinkedIn: 
-
-
-## Week 2: SIEM Skills
-- Built Splunk Playbook with 3 triage queries for SOC Analyst role
-
-
-
-
-## Case 01: Brute Force Attack Detection
-
-**Scenario**  
-An attacker attempted to brute force user accounts by sending multiple failed login requests from a single IP address.
-
-**Alert Details**
-- **Severity**: High
-- **Source**: Web Server Logs
-- **Indicator**: 127 failed login attempts from `192.168.1.10`
-
-**Detection**
-- **Tool Used**: Splunk Enterprise
-- **SPL Query**: [`brute-force-splunk.spl`](/03-SIEM-Queries/brute-force-splunk.spl)
-
-**Investigation & Findings**
-Ran SPL query to count failed 401s by source IP. Result:  
-
-**Result**: `192.168.1.10` had 4 failed login attempts within 5 seconds. This exceeded our threshold of 3 attempts.
-
-**Evidence**
-![Splunk Brute Force Detection](02-Evidence/screenshots/splunk-brute-force-detection.png)
-*Figure 1: Splunk statistics showing 4 failed attempts from attacker IP*
-
-**Containment & Response**
-1. Blocked IP `192.168.1.10` at firewall
-2. Forced password reset for targeted accounts  
-3. Created alert rule for future brute force attempts
-4. Notified SOC Lead
-
-**MITRE ATT&CK**: T1110.001 - Brute Force: Password Guessing
-
-
-
-## Case 02: Suspicious PowerShell Detection
-
-**Scenario**  
-An endpoint executed a suspicious PowerShell command with encoded parameters, likely used to download and execute malware without touching disk.
-
-**Alert Details**
-- **Severity**: Critical
-- **Source**: Windows Event Logs 4104 + Sysmon
-- **Indicator**: `powershell.exe -encodedcommand JABzAD...`
-
-**Detection**
-- **Tool Used**: Splunk Enterprise + Sysmon
-- **SPL Query**: [`suspicious-powershell.spl`](/03-SIEM-Queries/suspicious-powershell.spl)
-
-**Investigation & Findings**
-Searched for ProcessName=powershell with encoded flags. Result:  
-`WKSTN-042` User `jdoe` executed encoded PowerShell that called `Invoke-WebRequest` to `http://malicious.com/payload.exe`.
-
-**Evidence**
-*Screenshot: Splunk detection showing 1 event - Computer: WKSTN-042, User: jdoe, Flags: -encodedcommand, CommandLine: powershell.exe -e JABzAD0ATgBl...*
-*Image pending upload*
-
-**Containment & Response**
-1. Killed malicious `powershell.exe` process on `WKSTN-042`
-2. Isolated host from network via EDR
-3. Blocked C2 domain `malicious.com` at firewall
-4. Searched for persistence in Task Scheduler and Registry Run keys
-
-**MITRE ATT&CK**: T1059.001 - Command and Scripting Interpreter: PowerShell
-
-
-# SOC Blue Team Lab
-**By Davidking100**
-
-Hands-on SOC analyst portfolio with 5 incident response case studies.
-
-## 📁 Case Studies
-- **[Case 01: Brute Force Attack](./03-SIEM-Queries/Case-01-BruteForce.md)** - SIEM Alert Thresholds
-- **[Case 02: Suspicious DNS Tunneling](./03-SIEM-Queries/Case-02-Suspicious-DNS.md)** - Network Anomalies  
-- **[Case 03: DNS Traffic Baseline](./03-SIEM-Queries/Case-03-DNS-Traffic-Baseline.md)** - Threat Hunting
-- **[Case 04: Suspicious PowerShell](./03-SIEM-Queries/Case-04-Suspicious-PowerShell.md)** - LOLBAS + EventID 4104 + MITRE
-- **[Case 05: Phishing Email Triage](./04-Phishing-Analysis/README.md)** - IOC Extraction + MITRE
-- **[Case 06: Malware Alert Investigation](./05-Malware-Alert-Investigation/README.md)** - EDR + Process Analysis
-
-## 🛠️ Tools Used
-Splunk/SIEM, Wireshark, VirusTotal, Microsoft Defender, MITRE ATT&CK
-
-## 🎯 Goal
-Demonstrate practical blue team skills for SOC Analyst Level 1 roles.
-
-**Aspiring SOC L1 Analyst | Microsoft Defender XDR | Azure Sentinel | KQL | Incident Response**  
+**Aspiring SOC L1 Analyst | Microsoft Defender XDR | Azure Sentinel | KQL | Incident Response** 
 Lagos, Nigeria | Open to Remote 24/7 MSSP Roles
 
-This repository documents my hands-on Security Operations Center labs. Each incident follows the full IR workflow: **Detect > Investigate > Contain > Document** using Microsoft Defender XDR and KQL.
+This repository documents 7+ hands-on SOC labs covering SIEM, EDR, Phishing, Malware, Brute Force, and Incident Response.
 
-## 📁 Incident Response Labs
+## 📁 Lab Portfolio
 
-| Lab # | Title | Attack Type | Key Skills | Status |
-| --- | --- | --- | --- | --- |
-| 07 | [Phishing Investigation - CEO Impersonation] (./07-Phishing-Investigation.md) | BEC / Phishing | EmailEvents KQL, Impersonation | ✅ Closed |
-| 08 | [Data Exfiltration Investigation](./Incidents/LAB08-DataExfiltration.md) | Insider Threat | DeviceNetworkEvents, DeviceFileEvents KQL, Containment | ✅ Closed |
-| 09 | [Phishing Investigation](./Incidents/LAB09-Phishing.md) | Initial Access | EmailEvents, EmailUrlInfo KQL, Email Purge | ✅ Closed |
-| 10 | [Malware Infection Investigation](./Incidents/LAB10-Malware.md) | Execution / C2 | DeviceProcessEvents, IOC Hunting, Device Isolation | ✅ Closed |
+| Lab # | Title | Tools / Focus | Link |
+| --- | --- | --- | --- |
+| 01 | SIEM Alerts Triage | Defender XDR Alerts | [View](./01-SIEM-Alerts) |
+| 04 | Phishing Analysis | Email Header Analysis | [View](./04-Phishing-Analysis) |
+| 05 | Malware Alert Investigation | EDR, Process Analysis | [View](./05-Malware-Alert-Investigation) |
+| 06 | Sentinel Brute Force Lab | Azure Sentinel, KQL | [View](./06-Sentinel-BruteForce-Lab) |
+| 07 | Phishing Investigation | BEC, EmailEvents KQL | [View](./07%20-%20Phishing-Investigation) |
+| 08 | Data Exfiltration Investigation | Insider Threat, DLP | [View](./Incidents/LAB08-DataExfiltration.md) |
+| 09 | Phishing Investigation - Invoice | Initial Access | [View](./Incidents/LAB09-Phishing.md) |
+| 10 | Malware Infection Investigation | Execution, C2 | [View](./Incidents/LAB10-Malware.md) |
 
 ## 🛠️ Technical Skills
+**SIEM / EDR:** Microsoft Defender XDR, Azure Sentinel, Splunk 
+**Threat Hunting:** KQL - EmailEvents, DeviceNetworkEvents, DeviceProcessEvents 
+**IR:** Alert Triage, Incident Classification, Containment, Documentation 
+**Frameworks:** MITRE ATT&CK, NIST 800-61
 
-**SIEM & EDR:** Microsoft Defender XDR, Azure Sentinel, Splunk  
-**Threat Hunting:** KQL, MITRE ATT&CK Mapping, IOC Analysis  
-**IR:** Alert Triage, Incident Classification, Containment, Forensics  
-**Cloud Security:** Microsoft 365, Azure AD, Intune, DLP
-
-## 📊 What I Did
-1. **Triaged alerts** and classified True Positives vs False Positives
-2. **Wrote KQL queries** to hunt across Email, Device, and Network logs
-3. **Performed containment** - device isolation, user disable, domain blocks
-4. **Documented everything** in professional incident reports
-
-## 🤝 Connect With Me
-LinkedIn: https://www.linkedin.com/in/david-oluwatosin-233917158/ | Open to SOC L1, SOC Analyst, MSSP roles
-
-*Built to demonstrate real-world SOC skills for MSSP environments*
+## 📊 Key Achievements
+1. Investigated and contained Phishing, BEC, Malware, and Data Exfiltration incidents
+2. Wrote KQL queries to hunt across 1M+ log events
+3. Performed device isolation, user disable, and email purge for containment
+4. Documented all findings in professional IR reports
