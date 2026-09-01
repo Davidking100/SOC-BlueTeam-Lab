@@ -24,18 +24,18 @@ Detected a workstation uploading a large.zip file to an unauthorized external cl
 kql
 // Step 1: Find suspicious outbound traffic
 
-DeviceNetworkEvents
+`DeviceNetworkEvents
 | where TimeGenerated > ago(7d)
 | where RemoteUrl contains "dropbox.com"
 | where ActionType == "ConnectionSuccess"
-| summarize TotalBytesSent = sum(SentBytes) by DeviceName, RemoteUrl
+| summarize TotalBytesSent = sum(SentBytes) by DeviceName, RemoteUrl`
 
 // Step 2: Correlate with file activity
 
-DeviceFileEvents
+`DeviceFileEvents
 | where DeviceName == "LAPTOP-42"
 | where FileName endswith ".zip"
-| project TimeGenerated, FileName, FolderPath, SHA1```
+| project TimeGenerated, FileName, FolderPath, SHA1`
 
 
 Findings:
