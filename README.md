@@ -31,3 +31,5 @@ This repository documents 7+ hands-on SOC labs covering SIEM, EDR, Phishing, Mal
 2. Wrote KQL queries to hunt across 1M+ log events
 3. Performed device isolation, user disable, and email purge for containment
 4. Documented all findings in professional IR reports
+
+LinkedIn: https://www.linkedin.com/in/david-oluwatosin-233917158/
