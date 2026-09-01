@@ -131,6 +131,7 @@ This repository documents my hands-on Security Operations Center labs. Each inci
 
 | Lab # | Title | Attack Type | Key Skills | Status |
 | --- | --- | --- | --- | --- |
+| 07 | [Phishing Investigation - CEO Impersonation] (./07-Phishing-Investigation.md) | BEC / Phishing | EmailEvents KQL, Impersonation | ✅ Closed |
 | 08 | [Data Exfiltration Investigation](./Incidents/LAB08-DataExfiltration.md) | Insider Threat | DeviceNetworkEvents, DeviceFileEvents KQL, Containment | ✅ Closed |
 | 09 | [Phishing Investigation](./Incidents/LAB09-Phishing.md) | Initial Access | EmailEvents, EmailUrlInfo KQL, Email Purge | ✅ Closed |
 | 10 | [Malware Infection Investigation](./Incidents/LAB10-Malware.md) | Execution / C2 | DeviceProcessEvents, IOC Hunting, Device Isolation | ✅ Closed |
