@@ -25,15 +25,15 @@ Defender for Office 365 flagged a phishing email impersonating Contoso Billing. 
 ## 4. Investigation Steps
   kql
 // Step 1: Find who clicked the malicious URL
-EmailUrlInfo
+``EmailUrlInfo
 | where TimeGenerated > ago(24h)
 | where Url contains "contoso-invoice-secure.fake"
-| summarize ClickCount = count() by RecipientEmailAddress, Url
+| summarize ClickCount = count() by RecipientEmailAddress, Url``
 
 // Step 2: Find all recipients of the message
-EmailEvents
+``EmailEvents
 | where Subject contains "Invoice" and SenderFromAddress == "billing@contoso-invoice.com"
-| summarize Recipients = dcount(RecipientEmailAddress) 
+| summarize Recipients = dcount(RecipientEmailAddress)`` 
 
 
 **Findings**:
