@@ -121,3 +121,28 @@ Splunk/SIEM, Wireshark, VirusTotal, Microsoft Defender, MITRE ATT&CK
 
 ## 🎯 Goal
 Demonstrate practical blue team skills for SOC Analyst Level 1 roles.
+
+# SOC L1 Portfolio - David Oluwatosin
+
+Aspiring SOC L1 Analyst | Microsoft Defender XDR | Azure Sentinel | KQL | Incident Response
+
+This repository documents my hands-on incident response labs. Each lab follows a full IR workflow: Detect > Investigate > Contain > Document.
+
+## Labs
+
+| Lab # | Title | Attack Type | Tools Used | Status |
+| --- | --- | --- | --- | --- |
+| 08 | Data Exfiltration Investigation | Insider Threat / Exfiltration | Defender XDR, KQL | [View Report](./Incidents/LAB08-DataExfiltration.md) |
+| 09 | Phishing Investigation | Initial Access / Phishing | Defender XDR, EmailUrlInfo KQL | [View Report](./Incidents/LAB09-Phishing.md) |
+| 10 | Malware Infection Investigation | Execution / C2 | Defender XDR, Process KQL | [View Report](./Incidents/LAB10-Malware.md) |
+
+## Technical Skills
+**SIEM & EDR:** Microsoft Defender XDR, Azure Sentinel, Splunk, Elastic  
+**KQL:** EmailEvents, EmailUrlInfo, DeviceNetworkEvents, DeviceProcessEvents, DeviceFileEvents  
+**IR:** Alert Triage, Incident Classification, Containment, Forensics, Reporting  
+**Framework:** MITRE ATT&CK
+
+## About Me
+Security Operations Analyst based in Lagos, Nigeria. Open to remote 24/7 MSSP SOC roles.
+Connect with me on LinkedIn: https://www.linkedin.com/in/david-oluwatosin-233917158/
+
