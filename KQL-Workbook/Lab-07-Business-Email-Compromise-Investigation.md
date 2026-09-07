@@ -1,5 +1,6 @@
 Goal: CEO Impersonation and BEC hunting
-```
+
+```Kql
 // Query 7.1: Hunt emails from typo-squat domain
 
 EmailEvents
