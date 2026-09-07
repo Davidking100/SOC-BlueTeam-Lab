@@ -1,5 +1,6 @@
 Goal: Email authentication and header Analysis
-```
+
+```Kql
 // Query 4.1: Check SPF/DKIM/DMARC for domain
 
 EmailEvents
