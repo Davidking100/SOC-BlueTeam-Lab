@@ -22,10 +22,10 @@ This repository documents 7+ hands-on SOC labs covering SIEM, EDR, Phishing, Mal
 | 📘 | **KQL Practice Workbook**| 40+ KQL Queries for SOC | [View](./KQL-Workbook/KQL-Practice-Workbook.md) |
 
 ## 🛠️ Technical Skills
-**SIEM / EDR:** Microsoft Defender XDR, Azure Sentinel, Splunk 
-**Threat Hunting:** KQL - EmailEvents, DeviceNetworkEvents, DeviceProcessEvents 
-**IR:** Alert Triage, Incident Classification, Containment, Documentation 
-**Frameworks:** MITRE ATT&CK, NIST 800-61
+**SIEM / EDR:** | Microsoft Defender XDR, Azure Sentinel, Splunk |
+**Threat Hunting:** | KQL - EmailEvents, DeviceNetworkEvents, DeviceProcessEvents |
+**IR:** | Alert Triage, Incident Classification, Containment, Documentation |
+**Frameworks:** | MITRE ATT&CK, NIST 800-61 |
 
 ## 📊 Key Achievements
 1. Investigated and contained Phishing, BEC, Malware, and Data Exfiltration incidents
