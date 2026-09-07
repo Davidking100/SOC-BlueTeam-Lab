@@ -19,6 +19,7 @@ This repository documents 7+ hands-on SOC labs covering SIEM, EDR, Phishing, Mal
 | 08 | Data Exfiltration Investigation | Insider Threat, DLP | [View](./Incidents/LAB08-DataExfiltration.md) |
 | 09 | Phishing Investigation - Invoice | Initial Access | [View](./Incidents/LAB09-Phishing.md) |
 | 10 | Malware Infection Investigation | Execution, C2 | [View](./Incidents/LAB10-Malware.md) |
+| 📘 | [KQL Practice Workbook](./KQL-Practice-Workbook.md) | 40+ KQL Queries for SOC | [View](./KQL-Practice-Workbook.md) |
 
 ## 🛠️ Technical Skills
 **SIEM / EDR:** Microsoft Defender XDR, Azure Sentinel, Splunk 
