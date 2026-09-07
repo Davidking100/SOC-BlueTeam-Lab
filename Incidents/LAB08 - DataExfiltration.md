@@ -21,7 +21,7 @@ Detected a workstation uploading a large.zip file to an unauthorized external cl
 - **How:** Uploaded `HR_Records.zip` to `dropbox.com` via Chrome. ~2.3GB transferred
 
 ## 4. Investigation Steps
-kql
+```kql
 // Step 1: Find suspicious outbound traffic
 
 `DeviceNetworkEvents
@@ -37,7 +37,7 @@ kql
 | where FileName endswith ".zip"
 | project TimeGenerated, FileName, FolderPath, SHA1`
 
-
+```
 Findings:
     1. Device LAPTOP-42 sent 2.3GB to dropbox.com
     2. File C:\Users\jdoe\Documents\HR_Records.zip created 5 min before upload
