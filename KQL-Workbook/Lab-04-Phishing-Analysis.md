@@ -1,6 +1,6 @@
 Goal: Email authentication and header Analysis
 
-`// Query 4.1: Check SPF/DKIM/DMARC for domain
+```// Query 4.1: Check SPF/DKIM/DMARC for domain
 EmailEvents
 | where SenderFromAddress contains "contoso"
 | project TimeGenerated, SenderFromAddress, RecipientEmailAddress, SPF, DKIM, DMARC, EmailAction, Subject
