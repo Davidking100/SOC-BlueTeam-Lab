@@ -17,8 +17,8 @@ This repository documents 7+ hands-on SOC labs covering SIEM, EDR, Phishing, Mal
 | 06 | Sentinel Brute Force Lab | Azure Sentinel, KQL | [View](./06-Sentinel-BruteForce-Lab) |
 | 07 | Phishing Investigation | BEC, EmailEvents KQL | [View](./07%20-%20Phishing-Investigation) |
 | 08 | Data Exfiltration Investigation | Insider Threat, DLP | [View](./Incidents/LAB08%20-%20DataExfiltration.md) |
-| 09 | Phishing Investigation - Invoice | Initial Access | [View](./Incidents/LAB09-Phishing.md) |
-| 10 | Malware Infection Investigation | Execution, C2 | [View](./Incidents/LAB10-Malware.md) |
+| 09 | Phishing Investigation - Invoice | Initial Access | [View](./Incidents/LAB09%20-%20Phishing.md) |
+| 10 | Malware Infection Investigation | Execution, C2 | [View](./Incidents/LAB10%20-%20Malware.md) |
 | 📘 | **KQL Practice Workbook**| 40+ KQL Queries for SOC | [View](./KQL-Workbook/KQL-Practice-Workbook.md) |
 
 ## 🛠️ Technical Skills
