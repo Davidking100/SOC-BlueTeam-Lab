@@ -18,4 +18,4 @@ Syslog
 | summarize Attempts=count() by IpAddress, bin(TimeGenerated, 10m)
 | where Attempts >= 10
 ```
-Good work
+
