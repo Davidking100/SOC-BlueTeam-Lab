@@ -1,5 +1,6 @@
 Goal: Detect RDP and SSH brute force attacks
-```
+
+```Kql
 // Query 6.1: RDP Brute Force - 5+ failed logins in 5 minutes
 
 SecurityEvent
